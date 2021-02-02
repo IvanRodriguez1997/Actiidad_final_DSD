@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 29.01.2021 14:06:31
+-- Create Date: 02.02.2021 13:51:48
 -- Design Name: 
--- Module Name: xreg - Behavioral
+-- Module Name: xsubstractor - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -21,7 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -31,22 +31,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity xreg is
-    Port ( clr : in STD_LOGIC;
-           clk : in STD_LOGIC;
-           x1 : in STD_LOGIC_VECTOR (7 downto 0);
-           xld : in STD_LOGIC;
-           x : out STD_LOGIC_VECTOR (7 downto 0));
-end xreg;
+entity xsubstractor is
+    Port ( x : in STD_LOGIC_VECTOR (7 downto 0);
+           y : in STD_LOGIC_VECTOR (7 downto 0);
+           xr : out STD_LOGIC_VECTOR (7 downto 0));
+end xsubstractor;
 
-architecture Behavioral of xreg is
+architecture Behavioral of xsubstractor is
 
 begin
-    process (xld)
-    begin
-        if (xld'event and xld='1') then
-            x <= x1;
-        end if;
-    end process;
+xr <= (x - y);
 
 end Behavioral;

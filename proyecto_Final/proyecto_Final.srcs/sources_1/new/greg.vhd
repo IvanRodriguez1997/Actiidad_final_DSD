@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 29.01.2021 14:06:31
+-- Create Date: 02.02.2021 14:49:51
 -- Design Name: 
--- Module Name: xreg - Behavioral
+-- Module Name: greg - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,22 +31,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity xreg is
-    Port ( clr : in STD_LOGIC;
+entity greg is
+    Port ( x : in STD_LOGIC_VECTOR (7 downto 0);
            clk : in STD_LOGIC;
-           x1 : in STD_LOGIC_VECTOR (7 downto 0);
-           xld : in STD_LOGIC;
-           x : out STD_LOGIC_VECTOR (7 downto 0));
-end xreg;
+           clr : in STD_LOGIC;
+           gld : in STD_LOGIC;
+           gcd : out STD_LOGIC_VECTOR (7 downto 0));
+end greg;
 
-architecture Behavioral of xreg is
+architecture Behavioral of greg is
 
 begin
-    process (xld)
+    process (gld)
     begin
-        if (xld'event and xld='1') then
-            x <= x1;
-        end if;
+        if (gld'event and gld='1') then
+          gcd <= x;
+       end if;
     end process;
-
 end Behavioral;

@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 29.01.2021 14:06:31
+-- Create Date: 02.02.2021 14:22:59
 -- Design Name: 
--- Module Name: xreg - Behavioral
+-- Module Name: compare - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,22 +31,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity xreg is
-    Port ( clr : in STD_LOGIC;
-           clk : in STD_LOGIC;
-           x1 : in STD_LOGIC_VECTOR (7 downto 0);
-           xld : in STD_LOGIC;
-           x : out STD_LOGIC_VECTOR (7 downto 0));
-end xreg;
+entity compare is
+    Port ( x : in STD_LOGIC_VECTOR (7 downto 0);
+           y : in STD_LOGIC_VECTOR (7 downto 0);
+           eqflg : out STD_LOGIC;
+           ltflg : out STD_LOGIC);
+           
+end compare;
 
-architecture Behavioral of xreg is
+architecture Behavioral of compare is
 
 begin
-    process (xld)
-    begin
-        if (xld'event and xld='1') then
-            x <= x1;
-        end if;
-    end process;
-
+eqflg <= '1' when (x = y) else '0';
+ltflg <= '1' when (x /= y) else '0';
 end Behavioral;
