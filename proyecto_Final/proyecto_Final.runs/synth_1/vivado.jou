@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Feb  2 23:19:54 2021
+# Process ID: 7180
+# Current directory: C:/Users/Familia/Documents/GitHub/Actividad_final_DSD/proyecto_Final/proyecto_Final.runs/synth_1
+# Command line: vivado.exe -log xmux.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source xmux.tcl
+# Log file: C:/Users/Familia/Documents/GitHub/Actividad_final_DSD/proyecto_Final/proyecto_Final.runs/synth_1/xmux.vds
+# Journal file: C:/Users/Familia/Documents/GitHub/Actividad_final_DSD/proyecto_Final/proyecto_Final.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source xmux.tcl -notrace
