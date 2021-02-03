@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
  
-entity fsm is
+entity control_unit is
     Port ( go : in STD_LOGIC;   --señal de inicio   "go"
            eqflg : in STD_LOGIC;    --señal de igual x=y    "compare"
            ltflg : in STD_LOGIC;    --señal de diferente x/=y   "compare"
@@ -15,9 +15,9 @@ entity fsm is
            w : in STD_LOGIC;        --variable global de entrada
            z : out STD_LOGIC);      --variable global de salida
     
-end fsm;
+end control_unit;
  
-architecture Behavioral of fsm is
+architecture Behavioral of control_unit is
   type estados_t is (start,input,test1,test2,done,B,A);
   signal estado_actual, estado_siguiente : estados_t; 
 
