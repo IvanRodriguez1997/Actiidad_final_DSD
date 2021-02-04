@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 01.02.2021 20:57:53
 -- Design Name: 
--- Module Name: Resx - Behavioral
+-- Module Name: Muxbx - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -21,8 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use ieee.numeric_std.all;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -32,16 +31,17 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Resx is
-   Port  ( f : in STD_LOGIC_VECTOR (7 downto 0);
-           g : in STD_LOGIC_VECTOR (7 downto 0);
-           xrr : out STD_LOGIC_VECTOR (7 downto 0));
-end Resx;
+entity Muxbx is
+Port (  xin : in STD_LOGIC_VECTOR (7 downto 0);
+        xr : in STD_LOGIC_VECTOR (7 downto 0);
+        xsel : in STD_LOGIC;
+        x1 : out STD_LOGIC_VECTOR (7 downto 0));
+end Muxbx;
 
-architecture Behavioral of Resx is
-
+architecture Behavioral of Muxbx is
 begin
+ x1<= xin WHEN xsel = '1' ELSE
+            xr;
 
-xrr <= f - g;
- 
 end Behavioral;
+
